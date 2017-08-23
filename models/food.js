@@ -1,24 +1,31 @@
-// Import the ORM to create functions that will interact with the database.
-var orm = require("../config/orm.js");
-
-var cat = {
-  all: function(cb) {
-    orm.all("cats", function(res) {
-      cb(res);
-    });
-  },
-  // The variables cols and vals are arrays.
-  create: function(cols, vals, cb) {
-    orm.create("cats", cols, vals, function(res) {
-      cb(res);
-    });
-  },
-  update: function(objColVals, condition, cb) {
-    orm.update("cats", objColVals, condition, function(res) {
-      cb(res);
-    });
-  }
+module.exports = function(sequelize, DataTypes) {
+  var FavRecipe = sequelize.define("FavRecipe", {
+    title:  {
+      type: DataTypes.STRING,
+      // AllowNull is a flag that restricts a favrecipe from being entered if it doesn't
+      // have a text value
+      allowNull: false,
+      // len is a validation that checks that our favrecipe is between 1 and 140 characters
+      validate: {
+        len: [1]
+      }
+    },
+    image:  DataTypes.STRING,
+    source:  DataTypes.STRING,
+    url:  DataTypes.STRING,
+    yield: DataTypes.INTEGER,
+    ingredients: DataTypes.STRING,
+    dietLabels: DataTypes.STRING,
+    healthLabels: DataTypes.STRING,
+    notes: DataTypes.TEXT,
+    directions: DataTypes.TEXT,
+    favorite: {
+      type: DataTypes.BOOLEAN,
+      // defaultValue is a flag that defaults a new favrecipe complete value to true if
+      defaultValue: true
+    },
+}, {
+  timestamps: true,
+  });
+  return FavRecipe;
 };
-
-// Export the database functions for the controller (catsController.js).
-module.exports = cat;

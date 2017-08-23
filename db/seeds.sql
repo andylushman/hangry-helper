@@ -1,6 +1,4 @@
-INSERT INTO cats (name) VALUES ('Meeses');
-INSERT INTO cats (name) VALUES ('Bobbi');
-INSERT INTO cats (name, sleepy) VALUES ('Sylvester', true);
-INSERT INTO cats (name, sleepy) VALUES ('Marilyn Manson', true);
-INSERT INTO cats (name, sleepy) VALUES ('Joe Biden', true);
-INSERT INTO cats (name) VALUES ('Owens');
+#Will add starter data to work with
+#THIS COMES FROM EDAMAN JSON RESPONSE
+INSERT INTO favrecipes (title, image, source, url, yield, ingredients, dietLabels, healthLabels) VALUES ("Chicken Piccata", "https://www.edamam.com/web-img/eb5/eb5985a8a19a9fc72b0cf627282199ed.jpg", "No Recipes", "http://norecipes.com/recipe/chicken-piccata-recipe", 2, '"2 large chicken breasts","1/2 cup flour",
+"3 tbsps vegetable oil", "2 scallions white part only, minced", "3 tbsps lemon juice", "1 cup chicken stock", "1 tsp honey", "2 tbsps unsalted butter cut into small pieces", "2 tbsps parsley minced", "2 tbsps capers", "1 tsp lemon zest finely zested"', "Low-Carb", '"Peanut-Free", "Tree-Nut-Free", "Alcohol-Free"');
