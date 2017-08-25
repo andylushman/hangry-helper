@@ -13,6 +13,24 @@ var db = require("../models");
 module.exports = function (app) {
   
 
+app.get("/", function(req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.FavRecipe.findAll({})
+.then(function(recipe_data){
+        console.log(recipe_data);
+        return res.render('index', {recipe_data})
+    })
+
+//     .then(function(dbFavRecipe) {
+//       // We have access to the favrecipes as an argument inside of the callback function
+// var hbsObject = {
+//       favrecipes: JSON.stringify(dbFavRecipe)
+//     };
+//       res.render("index", dbFavRecipe.title);
+
+//     });
+  });
+
   // GET route for getting all of the favrecipes
   app.get("/api/favrecipes", function(req, res) {
     // findAll returns all entries for a table when used with no options
