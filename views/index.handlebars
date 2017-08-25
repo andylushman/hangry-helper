@@ -1,0 +1,40 @@
+<h1>Recipies!</h1>
+
+<h2>All recipies saved.</h2>
+
+<ul>
+  {{#each recipe_data}}
+      <li>
+        {{this.title}}
+      </li>
+  {{/each}}
+</ul>
+
+<!-- <h2>Cats that are sleepy!</h2>
+
+<ul>
+  {{#each cats}}
+    {{#if this.sleepy}}
+      <li>
+        {{this.name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="sleepy" value="false">
+          <button type="submit">WAKE UP!</button>
+        </form>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul> -->
+
+<h2>Add a Recipe</h2>
+<form class="create-update-form" action="/" method="POST">
+
+  <div class="form-group">
+    <label for="name">Recipe Name:</label>
+    <input type="text" id="name" name="title">
+  </div>
+
+
+  <button type="submit">Recipe</button>
+</form>
