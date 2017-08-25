@@ -10,7 +10,8 @@ var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
+  
 
 app.get("/", function(req, res) {
     // findAll returns all entries for a table when used with no options
@@ -93,4 +94,14 @@ app.get("/", function(req, res) {
       res.json(err);
     });
   });
+
+//Passport routes for registration
+
+  app.get("/register", function(req, res){
+    res.render("register", {title: 'Registration'})
+  })
+
+  app.post("/register", function(req, res){
+    res.render("register", {title: 'Registration Complete'})
+  })
 };
