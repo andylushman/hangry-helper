@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     source:  DataTypes.STRING,
     url:  DataTypes.STRING,
     yield: DataTypes.INTEGER,
-    ingredients: DataTypes.STRING,
+    ingredients: DataTypes.TEXT,
     dietLabels: DataTypes.STRING,
     healthLabels: DataTypes.STRING,
     notes: DataTypes.TEXT,
@@ -27,5 +27,14 @@ module.exports = function(sequelize, DataTypes) {
 }, {
   timestamps: true,
   });
+
+  FavRecipe.associate = function(models) {
+    FavRecipe.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  }
+
   return FavRecipe;
 };
