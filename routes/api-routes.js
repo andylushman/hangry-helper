@@ -10,7 +10,8 @@ var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
+  
 
   // GET route for getting all of the favrecipes
   app.get("/api/favrecipes", function(req, res) {
@@ -75,4 +76,14 @@ module.exports = function(app) {
       res.json(err);
     });
   });
+
+//Passport routes for registration
+
+  app.get("/register", function(req, res){
+    res.render("register", {title: 'Registration'})
+  })
+
+  app.post("/register", function(req, res){
+    res.render("register", {title: 'Registration Complete'})
+  })
 };

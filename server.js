@@ -33,7 +33,7 @@ app.set("view engine", "handlebars");
 //NOT SURE WHICH ONE IS NEEDED - THE FIRST ROUTE IS FROM SEQUELIZE EXAMPLE, THE SECOND IS FROM A HANDLEBARS EXERCISE
 require("./routes/api-routes.js")(app);
 // var routes = require("./controllers/foodController.js");
-
+// app.use("/", routes);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
@@ -41,3 +41,4 @@ db.sequelize.sync().then(function() {
 		console.log("App listening on PORT " + PORT);
 	});
 });
+
