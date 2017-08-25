@@ -1,24 +1,4 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
-}
 
-.label {
-  font-weight: bold;
-}
-
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
-}
-
-.form-group {
-  margin-bottom: 5px;
-}
-
-/**************/
 body, html {
   height: 100%;
   margin: 0;
@@ -49,8 +29,23 @@ p {
     Page Layout
 ***********************/
 .jumbotron {
-  background: url('../images/Recipes-Banner.jpg') no-repeat center center;
-  height: 350px;
+  height: 100%;
+  background: url('../images/Recipes-Banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 0em;
+}
+
+#title {
+  color: #88b970;
+  margin-top: 3em;
+}
+
+#scrollToContentImage {
+  margin-top: 10em;
+  height: 60px;
+  width: 60px;
 }
 
 #header {
@@ -60,28 +55,73 @@ p {
 
 #header h4 {
   margin-top: 0;
-  color: red;
+  color: #f23227;
 }
 
 #header p {
   margin-bottom: 0;
   margin-top: 5px;
+  color: #cf9c64;
 }
 
 #search-bar {
   width: 400px;
-  background-color: #464c53;
+  background-color: #cf9c64;
   border: none;
   outline: none;
-  color: #d2dfe5;
+  color: #22170c;
   line-height: 40px;
   font-size: 20px;
   vertical-align: bottom;
   margin-bottom: 8px;
 }
 
+#search-text {
+  color: #cf9c64;
+}
+
 .form {
-  background-color: #172536;
+  background-color: #22170c;
   padding: 5px;
   height: 60px;
+}
+
+.container-fluid {
+  background-color: lightblue;
+}
+
+/*********************
+MEDIA QUERIES
+*********************/
+
+@media only screen and (max-width: 850px) {
+
+  #title {
+    margin-top: 6em;
+  }
+
+  #search-text {
+    display: block;
+    font-size: 18px;
+    margin: auto;
+    margin-bottom: 10px;
+    vertical-align: text-bottom;
+    display: table;
+  }
+
+  #search-bar {
+    width: 350px;
+    border: none;
+    outline: none;
+    line-height: 40px;
+    font-size: 20px;
+    vertical-align: bottom;
+    margin: auto;
+    display: block;
+  }
+  .form {
+    padding: 5px;
+    height: 140px;
+    overflow: auto;
+  }
 }

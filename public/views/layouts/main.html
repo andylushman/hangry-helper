@@ -10,9 +10,12 @@
 	<title>Hangry Helper!</title>
 </head>
 	<body>
-
+		<!-- Jumbotron -->
 		<div class="jumbotron text-center">
-			<h1>Hangry Helper</h1>
+			<h1 id="title">Hangry Helper</h1>
+			<a id="scrollToContentImage" href="#header">
+				<img id="scrollToContentImage" src="../../../public/assets/images/arrow-down.png">
+			</a>
 		</div>
 		<div class="container-fluid" style="height: 100%">
 
@@ -24,19 +27,19 @@
 							<p>Search</p>
 							<h4>Recipes</h4>
 						</div>
-						<h4 id="search-text">Enter new start location here:</h4>
+						<h4 id="search-text">Enter your recipe requirements here:</h4>
 						<input type="text" placeholder="" id="search-bar">
 					</form>
 				</div>
 			</div>
-		</div><!-- /Row For Options-->
+			<!-- Results -->
+			<div id="results" class="row">
+				<div class="col-xs-12">
+						{{{ body }}}
+				</div>
+			</div>
 
-
-
-		{{{ body }}}
-
-
-
+		</div><!-- /container-fluid-->
 
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
