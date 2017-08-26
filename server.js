@@ -11,7 +11,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 var sequelize = new Sequelize(
 "recipes_db",
 "root",
-"DUb00tc4mp", {
+"1234", {
     "dialect": "mysql",
 });
 var flash = require('connect-flash');
@@ -49,9 +49,9 @@ app.use(flash());
 //handlebars dynamically
 
 app.use(function(req, res, next){
-	res.locals.successMsg = req.flash("successMsg");
-	res.locals.isAuthenticated = req.isAuthenticated();
-	next()
+  res.locals.successMsg = req.flash("successMsg");
+  res.locals.isAuthenticated = req.isAuthenticated();
+  next()
 })
 
 // Override with POST having ?_method=DELETE
@@ -63,16 +63,16 @@ var exphbs = require("express-handlebars");
 
 // Create `ExpressHandlebars` instance with a default layout.
 var hbs = exphbs.create({
-	defaultLayout: 'main',
+  defaultLayout: 'main',
     helpers: {
         format: function (text) { 
-        	// text = handlebars.escapeExpression(text);
-        	text = text.split(";").join("</li><li>");
-    		text = text.replace(/['"]+/g, '');
-			console.log("__________________________________")
-    		console.log(text)
-   		 return new handlebars.SafeString("<li>" + text + "</li>");
-        	
+          // text = handlebars.escapeExpression(text);
+          text = text.split(";").join("</li><li>");
+        text = text.replace(/['"]+/g, '');
+      console.log("__________________________________")
+        console.log(text)
+       return new handlebars.SafeString("<li>" + text + "</li>");
+          
         }
     }
 });
@@ -92,9 +92,8 @@ require("./routes/api-routes.js")(app);
 // =============================================================
 // IF YOU HAVE AN EXISTING DB USE THIS LINE INSTEAD...    db.sequelize.sync({force: true}).then(function() {
 
-	db.sequelize.sync().then(function() {
-	app.listen(PORT, function() {
-		console.log("App listening on PORT " + PORT);
-	});
+  db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
-
