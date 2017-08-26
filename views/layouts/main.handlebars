@@ -6,7 +6,7 @@
 	<!-- Latest compiled and minified Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Our CSS -->
-	<link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="../../assets/css/style.css" type="text/css" />
 	<title>Hangry Helper!</title>
 </head>
 	<body>
@@ -14,7 +14,7 @@
 		<div class="jumbotron text-center">
 			<h1 id="title">Hangry Helper</h1>
 			<a id="scrollToContentImage" href="#header">
-				<img id="scrollToContentImage" src="../../public/assets/images/arrow-down.png">
+				<img id="scrollToContentImage" src="../../assets/images/arrow-down.png">
 			</a>
 		</div>
 		<div class="container-fluid" style="height: 100%">
@@ -22,15 +22,16 @@
 			<!-- Row for Header -->
 			<div class="row">
 				<div class="col-lg-12">
-				<!-- Header from handlebars -->
-				{{>header}}
+					<div id="scrollToNav" class="">
+						<!-- Header from handlebars -->
+						{{>header}}
+					</div>
 				</div>
 			</div>
 
 			<!-- Results -->
 			<div id="results" class="row">
 				<div class="col-xs-12">
-
 
 
 
@@ -43,7 +44,9 @@
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<!-- Our JavaScript -->
-	<script type="text/javascript" src="../../public/assets/javascript/hangry-helper.js"></script>
 	<script type="text/javascript" src="./assets/javascript/api.js"></script>
+
+	<script type="text/javascript" src="../../assets/javascript/hangry-helper.js"></script>
+
 	</body>
 </html>
