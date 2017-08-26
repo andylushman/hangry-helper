@@ -115,7 +115,6 @@ module.exports = function(app) {
     app.get("/profile", authenticationMiddleware(), function(req, res) {
 
         res.render("profile", { user: req.session.passport.user })
-
   });
 
   // // GET route for getting all of the favrecipes
@@ -182,6 +181,7 @@ module.exports = function(app) {
       res.json(dbFavRecipe);
 
     })
+  })
 
     app.get("/login", function(req, res) {
         res.render("login", { title: "Login"})
