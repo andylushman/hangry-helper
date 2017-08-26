@@ -1,19 +1,143 @@
+<<<<<<< HEAD
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/***********************
+    Fonts
+***********************/
+* {
+  font-family: "Bebas", helvetica, arial;
+}
+
+
+#search-text {
+  display: inline-block;
+  color: #d2dfe5;
+  font-size: 18px;
+=======
+.ingList > li {
+	background-color: transparent;
+	padding: 0;
+}
+
 li {
   padding: 5px;
+>>>>>>> bbcd2f711b0cd831a4fa70716d3a5aa866e59084
   margin: 5px;
-  background: #faebd7;
+  vertical-align: text-bottom;
 }
 
-.label {
-  font-weight: bold;
+p {
+  color: #d2dfe5;
 }
 
-.create-update-form {
+/***********************
+    Page Layout
+***********************/
+.jumbotron {
+  height: 100%;
+  background: url('../images/Recipes-Banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 0em;
+}
+
+#title {
+  color: rgba(136,185,112, 0.8);
+  margin-top: 3em;
+}
+
+#scrollToContentImage {
+  margin-top: 10em;
+  height: 60px;
+  width: 60px;
+  opacity: 0.8;
+}
+
+#header {
+  display: inline-block;
+  padding-right: 1em;
+}
+
+#header h4 {
+  margin-top: 0;
+  color: #f23227;
+}
+
+#header p {
+  margin-bottom: 0;
+  margin-top: 5px;
+  color: #cf9c64;
+}
+
+#search-bar {
+  width: 400px;
+  background-color: #cf9c64;
+  border: none;
+  outline: none;
+  color: #22170c;
+  line-height: 40px;
+  font-size: 20px;
+  vertical-align: bottom;
+  margin-bottom: 8px;
+}
+
+#search-text {
+  color: #cf9c64;
+}
+
+.form {
+  background-color: #22170c;
   padding: 5px;
-  margin: 5px;
-  background: aqua;
+  height: 60px;
 }
 
-.form-group {
-  margin-bottom: 5px;
+.container-fluid {
+  background: url('../images/vintage-concrete.png');
+}
+
+/*********************
+MEDIA QUERIES
+*********************/
+
+@media only screen and (max-width: 850px) {
+
+  #title {
+    margin-top: 6em;
+  }
+
+  #search-text {
+    display: block;
+    font-size: 18px;
+    margin: auto;
+    margin-bottom: 10px;
+    vertical-align: text-bottom;
+    display: table;
+  }
+
+  #search-bar {
+    width: 350px;
+    border: none;
+    outline: none;
+    line-height: 40px;
+    font-size: 20px;
+    vertical-align: bottom;
+    margin: auto;
+    display: block;
+  }
+  .form {
+    padding: 5px;
+    height: 140px;
+    overflow: auto;
+  }
+}
+
+.card {
+	float: left;
+	margin: 5px
 }

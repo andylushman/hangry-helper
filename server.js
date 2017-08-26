@@ -58,9 +58,28 @@ app.use(function(req, res, next){
 app.use(methodOverride("_method"));
 
 // Set Handlebars.
+var handlebars = require('handlebars');
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// Create `ExpressHandlebars` instance with a default layout.
+var hbs = exphbs.create({
+	defaultLayout: 'main',
+    helpers: {
+        format: function (text) { 
+        	// text = handlebars.escapeExpression(text);
+        	text = text.split(";").join("</li><li>");
+    		text = text.replace(/['"]+/g, '');
+			console.log("__________________________________")
+    		console.log(text)
+   		 return new handlebars.SafeString("<li>" + text + "</li>");
+        	
+        }
+    }
+});
+
+
+
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 // Routes
