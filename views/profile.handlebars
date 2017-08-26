@@ -7,13 +7,12 @@
  		<div class="row">
  			<div class="col=md-12">
  			 {{#each recipe_data}}
-				  <div class="card w-25">
+				  <div class="card w-30">
 				    <img class="card-img-top" src="{{this.image}}" alt="{{this.title}}">
 				    <div class="card-body">
 				      <h4 class="card-title">{{this.title}}</h4>
-				        <h5 class="card-ingredients"><strong>Ingredients</strong></h5>
-				        <ul class="ingList">{{format ingredients}}</ul>
-				        <p><button type="button" class="btn btn-primary">Email Recipe</button> <button type="button" class="btn btn-default">Update Recipe</button></p>
+				      <p class="center"><button type="button" class="btn btn-primary">Edit Recipe</button></p>
+		    
 				    </div>
 				    <div class="card-footer">
 				      <small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small>
