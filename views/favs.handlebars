@@ -1,0 +1,29 @@
+<div class="container">
+<h1>My Favorite Recipies</h1>
+
+<div class="card-deck">
+ 
+ {{#each recipe_data}}
+  <div class="card">
+    <img class="card-img-top" src="{{this.image}}" alt="{{this.title}}">
+    <div class="card-body">
+      <h4 class="card-title">{{this.title}}</h4>
+      <div class="row">
+        <div class="col-sm-9">
+          <h5 class="card-ingredients"><strong>Ingredients</strong></h5>
+          <ul class="ingList">{{format ingredients}}</ul>
+        </div>
+        <div class="col-sm-3">
+          <p><button type="button" class="btn btn-primary">Add to Favorites</button></p>
+          <p><button type="button" class="btn btn-default">Email Recipe</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small>
+    </div>
+  </div>
+ {{/each}}
+</div>
+
+</div>
