@@ -11,7 +11,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 var sequelize = new Sequelize(
 "recipes_db",
 "root",
-"", {
+"DUb00tc4mp", {
     "dialect": "mysql",
 });
 var flash = require('connect-flash');
