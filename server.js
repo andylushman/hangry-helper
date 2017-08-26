@@ -73,6 +73,12 @@ var hbs = exphbs.create({
     		console.log(text)
    		 return new handlebars.SafeString("<li>" + text + "</li>");
         	
+        },
+        defaultImg: function(image) {
+          if (image === "") {
+            image = "/assets/images/foodprep.jpg";
+          return image;
+          }
         }
     }
 });
