@@ -38,7 +38,7 @@ p {
 }
 
 #title {
-  color: #88b970;
+  color: rgba(136,185,112, 0.8);
   margin-top: 3em;
 }
 
@@ -46,6 +46,7 @@ p {
   margin-top: 10em;
   height: 60px;
   width: 60px;
+  opacity: 0.8;
 }
 
 #header {
@@ -87,7 +88,7 @@ p {
 }
 
 .container-fluid {
-  background-color: lightblue;
+  background: url('../images/vintage-concrete.png');
 }
 
 /*********************
