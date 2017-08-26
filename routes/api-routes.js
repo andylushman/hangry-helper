@@ -25,8 +25,9 @@ app.get("/", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.FavRecipe.findAll({}).then(function(recipe_data){
         // console.log(recipe_data);
-        return res.render('favs', {recipe_data})
+        return res.render('profile', {recipe_data})
     });
+});
 
     // GET route for getting all of the favrecipes
     app.get("/api/favrecipes", function(req, res) {
@@ -103,17 +104,7 @@ app.get("/", function(req, res) {
     app.get("/profile", authenticationMiddleware(), function(req, res) {
 
         res.render("profile", { user: req.session.passport.user })
->>>>>>> master
   });
-
- 
-  // app.get("/api/favrecipes", function(req, res) {
-  //   // findAll returns all entries for a table when used with no options
-  //   db.FavRecipe.findAll({}).then(function(dbFavRecipe) {
-  //     // We have access to the favrecipes as an argument inside of the callback function
-  //     res.json(dbFavRecipe);
-  //   });
-  // });
 
 
   // POST route for saving a new recipe
@@ -160,11 +151,7 @@ app.get("/", function(req, res) {
       yield: req.body.yield,
       ingredients: req.body.ingredients,
       dietLabels: req.body.dietLabels,
-<<<<<<< HEAD
-      healthLabels: req.body. healthLabels,
-=======
-      healthLabels: req.body.healthLabels,
->>>>>>> master
+     healthLabels: req.body.healthLabels,
       notes: req.body.notes,
       directions: req.body.directions
     }, {
