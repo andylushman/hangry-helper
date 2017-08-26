@@ -270,7 +270,7 @@ module.exports = function(app) {
                 }
 
             }).then(function(user, error) {
-              console.log(user)
+             
                 if (error) { done(error) } else if (user == null) {
                     
                     
