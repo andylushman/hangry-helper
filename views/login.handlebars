@@ -1,0 +1,21 @@
+<div class="container">
+
+<h1>{{title}}</h1>
+ {{#if successMsg}}
+  <div class="alert alert-success">
+    {{successMsg}}
+    </div>
+{{/if}}
+
+<form method="POST" action="/login">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" name="username" class="form-control" placeholder="username">
+  </div>
+  <div class="form-group">
+    <label for="password">password</label>
+    <input type="password" name="password" class="form-control" placeholder="password">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<h1>Welcome {{user}}</h1>
+{{>header}}
+<h2>All recipies saved.</h2>
+
+<ul>
+  {{#each favrecipes}}
+    {{#unless this.sleepy}}
+      <li>
+        {{this.name}}
+
+        
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
