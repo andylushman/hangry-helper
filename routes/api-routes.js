@@ -69,14 +69,14 @@ app.get("/", function(req, res) {
     db.FavRecipe.update({
       title: req.body.title,
       image: req.body.image,
-      source: req.body.source
-      url: req.body.url
-      yield: req.body.yield
-      ingredients: req.body.ingredients
-      dietLabels: req.body.dietLabels
-      healthLabels: req.body.
-      notes:
-      directions:
+      source: req.body.source,
+      url: req.body.url,
+      yield: req.body.yield,
+      ingredients: req.body.ingredients,
+      dietLabels: req.body.dietLabels,
+      healthLabels: req.body. healthLabels,
+      notes: req.body.notes,
+      directions: req.body.directions
     }, {
       where: {
         id: req.body.id

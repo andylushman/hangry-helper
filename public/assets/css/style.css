@@ -22,3 +22,8 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+
+.card {
+	float: left;
+	margin: 5px
+}
