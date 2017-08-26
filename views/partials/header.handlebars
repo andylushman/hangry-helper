@@ -1,0 +1,13 @@
+<div class="container">
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+  {{#if isAuthenticated}}
+    <li><a href="/logout">Logout</a></li>
+    {{else}}
+    <li><a href="/login">Login</a></li>
+    {{/if}}
+    <li><a href="/home">Home</a></li>
+  </ul>
+  <p class="navbar-text">Recipes</p>
+</nav>
+</div>

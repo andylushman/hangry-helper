@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 body, html {
   height: 100%;
@@ -17,6 +18,15 @@ body, html {
   display: inline-block;
   color: #d2dfe5;
   font-size: 18px;
+=======
+.ingList > li {
+	background-color: transparent;
+	padding: 0;
+}
+
+li {
+  padding: 5px;
+>>>>>>> bbcd2f711b0cd831a4fa70716d3a5aa866e59084
   margin: 5px;
   vertical-align: text-bottom;
 }
@@ -125,4 +135,9 @@ MEDIA QUERIES
     height: 140px;
     overflow: auto;
   }
+}
+
+.card {
+	float: left;
+	margin: 5px
 }
