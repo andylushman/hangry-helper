@@ -11,7 +11,7 @@ var SequelizeStore = require('connect-session-sequelize')(session.Store);
 var sequelize = new Sequelize(
 "recipes_db",
 "root",
-"DUb00tc4mp", {
+"", {
     "dialect": "mysql",
 });
 var flash = require('connect-flash');
@@ -65,14 +65,14 @@ var exphbs = require("express-handlebars");
 var hbs = exphbs.create({
 	defaultLayout: 'main',
     helpers: {
-        format: function (text) { 
+        format: function (text) {
         	// text = handlebars.escapeExpression(text);
         	text = text.split(";").join("</li><li>");
     		text = text.replace(/['"]+/g, '');
 			console.log("__________________________________")
     		console.log(text)
    		 return new handlebars.SafeString("<li>" + text + "</li>");
-        	
+
         }
     }
 });
@@ -97,4 +97,3 @@ require("./routes/api-routes.js")(app);
 		console.log("App listening on PORT " + PORT);
 	});
 });
-
