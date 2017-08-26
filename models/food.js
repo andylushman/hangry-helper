@@ -28,13 +28,5 @@ module.exports = function(sequelize, DataTypes) {
   timestamps: true,
   });
 
-  FavRecipe.associate = function(models) {
-    FavRecipe.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  }
-
   return FavRecipe;
 };
