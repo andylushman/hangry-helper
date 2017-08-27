@@ -1,4 +1,4 @@
-$("#results").hide();
+// $("#results").hide();
 console.log("test");
 
 $("#search-bar").keypress(function(e) {

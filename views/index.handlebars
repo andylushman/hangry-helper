@@ -1,40 +1,7 @@
 <h1>Recipies!</h1>
 
-<h2>All recipies saved.</h2>
 
-<ul>
-  {{#each favrecipes}}
-    {{#unless this.sleepy}}
-      <li>
-        {{this.name}}
-
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="true">
-          <button type="submit">SLEEP TIME!</button>
-        </form>
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Cats that are sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if this.sleepy}}
-      <li>
-        {{this.name}}
-
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="false">
-          <button type="submit">WAKE UP!</button>
-        </form>
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Cat</h2>
+<h2>Search for a recipe</h2>
 <form class="create-update-form" action="/" method="POST">
 
   <div class="form-group">

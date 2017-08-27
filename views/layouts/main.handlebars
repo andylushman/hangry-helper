@@ -17,26 +17,57 @@
 				<img id="scrollToContentImage" src="../../assets/images/arrow-down.png">
 			</a>
 		</div>
-		<div class="container-fluid" style="height: 100%">
+		
 
-			<!-- Row for Header -->
-			<div class="row">
-				<div class="col-lg-12 form">
-					<form>
-						<div id="header">
-							<p>Search</p>
-							<h4>Recipes</h4>
-						</div>
-						<h4 id="search-text">Enter your recipe requirements here:</h4>
-						<input type="text" placeholder="" id="search-bar">
-					</form>
-				</div>
-			</div>
+			<!-- Row for Header Search Bar -->
+<nav class="navbar" id="header">
+        <form class="form-inline my-2 my-lg-0">
+        <div class="form-row">
+        <div class="col-sm-2">
+        <p>Search</p>
+        <h4>Recipes</h4>
+        </div>
+         <div class="col-auto">
+          <label><h4 id="search-text">Keyword: </h4></label><input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <label for="dietLabel"><h4 id="search-text">Diet: </h4></label> <select class="form-control" id="dietLabel">
+						    	<option></option>
+								<option value="balanced">Balanced</option>
+								<option value="high-fiber">High-Fiber</option>
+								<option value="high-protein">High-Protein</option>
+								<option value="low-carb">Low-Carb</option>
+								<option value="low-fat">Low-Fat</option>
+								<option value="low-sodium">Low-Sodium</option>
+								<option value="low-sugar">Low-Sugar</option>
+						    </select>
+         <label for="healthLabel"><h4 id="search-text">Allergies/Food Lifestyle: </h4></label>
+						    <select class="form-control" id="healthLabel">
+						      	<option></option>
+						      	<option value="gluten-free">Gluten</option>
+								<option value="dairy-free">Dairy</option>
+								<option value="egg-free">Eggs</option>
+								<option value="soyfree">Soy</option>
+								<option value="wheat-free">Wheat</option>
+								<option value="fish-free">Fish</option>
+								<option value="shellfish-free">Shellfish</option>
+								<option value="tree-nut-free">Tree Nuts</option>
+								<option value="peanut-free">Peanuts</option>
+								<option value="vegan">Vegan</option>
+								<option value="vegetarian">Vegetarian</option>
+								<option value="paleo">Paleo</option>
+								<option value="kosher">Kosher</option>
+						    </select>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+          </div>
+         </div>
+        </form>
+      </div>
+    </nav>
+			<div class="container-fluid" style="height: 100%">
 			<!-- Results -->
 			<div id="results" class="row">
 				<div class="col-xs-12">
 
-					{{body}}
+					{{{ body }}}
 
 
 				</div>
