@@ -47,7 +47,7 @@ p {
 }
 
 #header {
-  display: inline-block;
+  /*display: inline-block;*/
   padding-right: 1em;
 }
 
@@ -78,7 +78,7 @@ p {
   color: #cf9c64;
 }
 
-.form {
+form {
   background-color: #22170c;
   padding: 5px;
   height: 60px;
