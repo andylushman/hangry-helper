@@ -27,4 +27,16 @@ app.get('/', function (req, res) {
 });
 
 
+app.get("/:id", function(req, res) {
+  db.FavRecipe.findOne({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(recipe_data) {
+    console.log(recipe_data.id)
+  return res.render('fav_edit', {recipe_data});
+});
+
+});
+
 };
