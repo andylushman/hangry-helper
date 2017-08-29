@@ -25,25 +25,28 @@
 
 			<!-- Row for Header Search Bar -->
 <nav class="navbar" id="header">
-        <form class="form-inline my-2 my-lg-0">
-        <div class="form-row">
-        <div class="col-sm-2">
-        <p>Search</p>
-        <h4>Recipes</h4>
-        </div>
-         <div class="col-auto">
-          <label><h4 id="search-text">Keyword: </h4></label><input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
-          <label for="dietLabel"><h4 id="search-text">Diet: </h4></label> <select class="form-control" id="dietLabel">
-						    	<option></option>
-								<option value="balanced">Balanced</option>
-								<option value="high-fiber">High-Fiber</option>
-								<option value="high-protein">High-Protein</option>
-								<option value="low-carb">Low-Carb</option>
-								<option value="low-fat">Low-Fat</option>
-								<option value="low-sodium">Low-Sodium</option>
-								<option value="low-sugar">Low-Sugar</option>
-						    </select>
-         <label for="healthLabel"><h4 id="search-text">Allergies/Food Lifestyle: </h4></label>
+    <form class="form-inline my-2 my-lg-0">
+        <!-- <div class="form-row"> -->
+	        <div class="col-sm-2">
+		        <p>Search</p>
+		        <h4>Recipes</h4>
+	        </div>
+         <div class="col-sm-8">
+          <h4 id="search-text">Keyword: </h4>
+          	<input class="form-control mr-sm-2 search" type="text" placeholder="Search" aria-label="Search">
+          <h4 id="search-text">Diet: </h4>
+          		<select class="form-control" id="dietLabel">
+			    	<option></option>
+					<option value="balanced">Balanced</option>
+					<option value="high-fiber">High-Fiber</option>
+					<option value="high-protein">High-Protein</option>
+					<option value="low-carb">Low-Carb</option>
+					<option value="low-fat">Low-Fat</option>
+					<option value="low-sodium">Low-Sodium</option>
+					<option value="low-sugar">Low-Sugar</option>
+			    </select>
+
+         <!-- <h4 id="search-text">Allergies/Food Lifestyle: </h4>
 						    <select class="form-control" id="healthLabel">
 						      	<option></option>
 						      	<option value="gluten-free">Gluten</option>
@@ -59,12 +62,14 @@
 								<option value="vegetarian">Vegetarian</option>
 								<option value="paleo">Paleo</option>
 								<option value="kosher">Kosher</option>
-						    </select>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+						    </select> -->
+          		<button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+          	</div>
+          	<div class="col-sm-2">
+          		<a href="/favs" class="btn btn-danger">My Favorite Recipes</a>
           </div>
-         </div>
+         <!-- </div> -->
         </form>
-      </div>
     </nav>
 			<div class="container-fluid" style="height: 100%">
 			<!-- Results -->

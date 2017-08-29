@@ -1,26 +1,24 @@
-<h1>Welcome {{user}}</h1>
-
-<div class="row">
-	<div class="col-md-12">
+<div class="container">
 		<h2>My Favorite Recipes</h2>
 
- 		<div class="row">
- 			<div class="col=md-12">
+ 		<!-- <div class="row">
+ 			<div class="col=md-12"> -->
  			 {{#each recipe_data}}
-				  <div class="card w-30">
-				    <img class="card-img-top" src="{{defaultImg this.image}}" alt="{{this.title}}">
-				    <div class="card-body">
+				  <div class="card w-25">
+				    <img class="card-img-top" src="{{this.image}}" alt="{{this.title}}">
+				    <div class="card-body text-center">
 				      <h4 class="card-title">{{this.title}}</h4>
-				      <p class="center"><button type="button" class="btn btn-primary">Edit Recipe</button></p>
-		    
-				    </div>
-				    <div class="card-footer">
-				      <small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small>
-				    </div>
+				      
+				      <p><small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small></p>
+
+				      <a href="/{{this.id}}" class="btn btn-danger btn-sm">Edit Recipe</a>
+				    
 				  </div>
  			  {{/each}}
- 			</div>
- 		</div>
+ 				</div>
+ 			<!-- </div>
+ 		</div> -->
+ 		
 
 
 </div>
