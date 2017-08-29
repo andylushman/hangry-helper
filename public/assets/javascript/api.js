@@ -24,22 +24,30 @@ $("#search-btn").on("click", function(){
 		console.log(response);
 		for (var i = 0; i < 8; i++){
 			var results = response.hits[i];
-			// console.log(results.recipe)
+			console.log(results.recipe)
 		var ing = results.recipe.ingredientLines;
 	
 			
 			// console.log(ing)
 			
 			var newCard = $( "<div class='col-sm-3'>" )
-			newCard.html("<div class='card text-center'> <img class= 'img-fluid' src=" + results.recipe.image + " alt = 'card image cap'> <div class='card-body text-center>" + "<h4 class = 'card-title'><strong>" + results.recipe.label + "</strong></h4> <h6 class= text-danger text-muted><u>Ingredient List</u></h6> <p class='card-text text-primary text-center'> " + ing + " </p> <a class='btn btn-primary' href=" +  results.recipe.url + " target='_blank'>Recipe!</a><a class='btn btn-success' href=" +  results.recipe.shareAs + " target='_blank'>Nutrients!</a><br><a class='btn btn-info'>Save Recipe!</a></div> </div></div>");
+			newCard.html("<div class='card text-center'> <img class= 'img-fluid' src=" + results.recipe.image + " alt = 'card image cap'> <div class='card-body text-center>" + "<h4 class = 'card-title'><strong>" + results.recipe.label + "</strong></h4> <h6 class= text-danger text-muted><u>Ingredient List</u></h6> <p class='card-text text-primary text-center'> " + ing + " </p> <a class='btn btn-primary' href=" +  results.recipe.url + " target='_blank'>Recipe!</a><a class='btn btn-success' href=" +  results.recipe.shareAs + " target='_blank'>Nutrients!</a><br><a href='/fav' id='save-btn' class='btn btn-info'>Save Recipe!</a></div> </div></div>");
 
 			$(".results").append(newCard)
 
-			// console.log(response.hits[i]);
+			console.log(response.hits[i]);
 		
 		};
 
 	})
-})
+});
+
+  $(document).on("submit", "#save-btn", insertRecipe);
+
+    // This function inserts a new todo into our database and then updates the view
+  function insertRecipe(newCard) {
+    event.preventDefault();
+    $.post("/favs", newCard);
+  }
 
 
