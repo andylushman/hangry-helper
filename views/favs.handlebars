@@ -8,10 +8,10 @@
 				    <img class="card-img-top" src="{{this.image}}" alt="{{this.title}}">
 				    <div class="card-body text-center">
 				      <h4 class="card-title">{{this.title}}</h4>
-				      <form action="/{{this.id}}?_method=GET" method="GET">
-				      <button type="button" class="btn btn-primary">Edit Recipe</button>
-				      </form>
-				      <small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small>
+				      
+				      <p><small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small></p>
+
+				      <a href="/{{this.id}}" class="btn btn-danger btn-sm">Edit Recipe</a>
 				    
 				  </div>
  			  {{/each}}

@@ -33,10 +33,23 @@ app.get("/:id", function(req, res) {
       id: req.params.id
     }
   }).then(function(recipe_data) {
-    console.log(recipe_data.id)
+    // console.log(recipe_data)
   return res.render('fav_edit', {recipe_data});
 });
 
 });
+
+app.put("/:id", function(req, res) {
+   db.FavRecipe.update({
+      notes: req.body.notes,
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbTodo) {
+      res.redirect('/favs');
+    });
+  });
+
 
 };
