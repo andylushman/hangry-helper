@@ -10,6 +10,10 @@
 				      <h4 class="card-title">{{this.title}}</h4>
 				      
 				      <p><small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small></p>
+				    {{#if this.notes}}
+				    	<small><strong>My Notes: </strong>
+				    	{{this.notes}}</small><br>
+				    {{/if}}
 
 				      <a href="/{{this.id}}" class="btn btn-danger btn-sm">Edit Recipe</a>
 				    
