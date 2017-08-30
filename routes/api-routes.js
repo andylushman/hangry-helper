@@ -24,6 +24,8 @@ app.get("/favs", function(req, res) {
     });
 });
 
+
+
 app.get("/:id", function(req, res) {
   db.FavRecipe.findOne({
     where: {
@@ -63,11 +65,10 @@ app.post("/favs/posts", function(req, res) {
       ingredients: req.body.ingredients,
       dietLabels: req.body.dietLabels
     })
-    .then(function(dbFavs) {
-      res.json(dbFavs);
-      res.redirect('/favs');
-    });
+
   });
+
+
 
 // app.post("/favs", function(req, res) {
 //   console.log(req.body);
