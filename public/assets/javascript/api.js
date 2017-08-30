@@ -1,7 +1,7 @@
 // $("#results").hide();
 console.log("test");
 
-$("#search-btn").on("submit", function(){
+$("#search-btn").on("click", function(){
 	var search = $(".search").val().trim()
 
 	var diet = "diet="+ $("#dietLabel").val().trim() + "&";
