@@ -1,21 +1,28 @@
 <div class="container">
-<h1>My Favorite Recipies</h1>
+		<h2>My Favorite Recipes</h2>
 
- 
- {{#each recipe_data}}
-  <div class="card w-25">
-    <img class="card-img-top" src="{{this.image}}" alt="{{this.title}}">
-    <div class="card-body">
-      <h4 class="card-title">{{this.title}}</h4>
-        <h5 class="card-ingredients"><strong>Ingredients</strong></h5>
-        <ul class="ingList">{{format ingredients}}</ul>
-        <p><button type="button" class="btn btn-primary">Email Recipe</button> <button type="button" class="btn btn-default">Update Recipe</button></p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small>
-    </div>
-  </div>
- {{/each}}
+ 		<!-- <div class="row">
+ 			<div class="col=md-12"> -->
+ 			 {{#each recipe_data}}
+				  <div class="card w-25">
+				    <img class="card-img-top" src="{{this.image}}" alt="{{this.title}}">
+				    <div class="card-body text-center">
+				      <h4 class="card-title">{{this.title}}</h4>
+				      
+				      <p><small class="text-muted">Full instructions available at: <a href="{{this.url}}" target="_blank">{{this.source}}</a></small></p>
+				    {{#if this.notes}}
+				    	<small><strong>My Notes: </strong>
+				    	{{this.notes}}</small><br>
+				    {{/if}}
+
+				      <a href="/{{this.id}}" class="btn btn-danger btn-sm">Edit Recipe</a>
+				    
+				  </div>
+ 			  {{/each}}
+ 				</div>
+ 			<!-- </div>
+ 		</div> -->
+ 		
 
 
 </div>
