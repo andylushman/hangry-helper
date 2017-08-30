@@ -24,6 +24,8 @@ app.get("/favs", function(req, res) {
     });
 });
 
+
+
 app.get("/:id", function(req, res) {
   db.FavRecipe.findOne({
     where: {
@@ -68,6 +70,5 @@ app.post("/favs/new", function(req, res) {
       res.redirect('/favs');
     });
   });
-
 
 };
