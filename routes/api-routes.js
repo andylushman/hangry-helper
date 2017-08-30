@@ -37,12 +37,12 @@ app.get("/:id", function(req, res) {
 });
 
 app.put("/:id", function(req, res) {
-  console.log(req.body.id);
+  console.log(req.params.id);
    db.FavRecipe.update({
       notes: req.body.notes,
     }, {
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function(dbTodo) {
       res.redirect('/favs');
@@ -51,8 +51,8 @@ app.put("/:id", function(req, res) {
 
 //To save a recipe to favorites -- NOT WORKING YET
 
-app.post("/favs/posts", function(req, res) {
-    console.log(req.body);
+app.post("/favs/new", function(req, res) {
+    console.log("posting recipe", req.body);
 
     db.FavRecipe.create({
       title: req.body.title,
@@ -64,18 +64,10 @@ app.post("/favs/posts", function(req, res) {
       dietLabels: req.body.dietLabels
     })
     .then(function(dbFavs) {
-      res.json(dbFavs);
+      // res.json(dbFavs);
       res.redirect('/favs');
     });
   });
-
-// app.post("/favs", function(req, res) {
-//   console.log(req.body);
-//   db.FavRecipe.create(req.body).then(function(dbPost) {
-//       res.json(dbPost);
-//       res.redirect("/");
-//   });
-// });
 
 
 };
