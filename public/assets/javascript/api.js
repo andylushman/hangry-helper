@@ -31,10 +31,10 @@ $("#search-btn").on("click", function(){
 			// console.log(ing)
 			
 			var newCard = $( "<div class='col-sm-3'>" )
-			newCard.html("<div class='card text-center'> <img class= 'img-fluid' src=" + results.recipe.image + " alt = 'card image cap'> <div class='card-body text-center>" + "<h4 class = 'card-title'><strong>" + results.recipe.label + "</strong></h4> <h6 class= text-danger text-muted><u>Ingredient List</u></h6> <p class='card-text text-primary text-center'> " + ing + " </p> <a class='btn btn-primary' href=" +  results.recipe.url + " target='_blank'>Recipe!</a><a class='btn btn-success' href=" +  results.recipe.shareAs + " target='_blank'>Nutrients!</a><br><a href='/fav' id='save-btn' class='btn btn-info'>Save Recipe!</a></div> </div></div>");
+			newCard.html("<div class='card text-center'> <img class= 'img-fluid id='image' src=" + results.recipe.image + " alt = 'card image cap'> <div class='card-body text-center>" + "<h4 class = 'card-title' id='title'><strong>" + results.recipe.label + "</strong></h4> <h6 class= text-danger text-muted><u>Ingredient List</u></h6> <p class='card-text text-primary text-center' id = 'ingredients'> " + ing + " </p> <p><small class='text-muted' id='source'> Courtesy of: " + results.recipe.source + "</p></small> <a class='btn btn-primary' id='url' href=" +  results.recipe.url + " target='_blank'>Recipe!</a><a class='btn btn-success' href=" +  results.recipe.shareAs + " target='_blank'>Nutrients!</a><br><br><a href='/fav' id='save-btn' class='btn btn-info'>Save Recipe!</a></div> </div></div>");
 
 			$(".results").append(newCard)
-
+ 
 			console.log(response.hits[i]);
 		
 		};
