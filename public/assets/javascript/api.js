@@ -1,7 +1,7 @@
 // $("#results").hide();
 console.log("test");
 
-$("#search-btn").on("click", function(){
+$("#search-btn").on("submit", function(){
 	var search = $(".search").val().trim() 
 
 	var diet = "diet="+ $("#dietLabel").val().trim() + "&";
@@ -32,7 +32,7 @@ $("#search-btn").on("click", function(){
 			
 			var newCard = $( "<div class='col-sm-3'>" )
 
-			newCard.html("<div class='card text-center'> <img class= 'img-fluid id='image' src=" + results.recipe.image + " alt = 'card image cap'> <div class='card-body text-center>" + "<h4 class = 'card-title' id='title'><strong>" + results.recipe.label + "</strong></h4> <h6 class= text-danger text-muted><u>Ingredient List</u></h6> <p class='card-text text-primary text-center' id = 'ingredients'> " + ing + " </p> <p><small class='text-muted' id='source'> Courtesy of: " + results.recipe.source + "</p></small> <a class='btn btn-primary' id='url' href=" +  results.recipe.url + " target='_blank'>Recipe!</a><a class='btn btn-success' href=" +  results.recipe.shareAs + " target='_blank'>Nutrients!</a><br><br><a href='/fav' id='save-btn' class='btn btn-info'>Save Recipe!</a></div> </div></div>");
+			newCard.html("<div class='card text-center'> <img class= 'img-fluid id='image' src=" + results.recipe.image + " alt = 'card image cap'> <div class='card-body text-center>" + "<h4 class = 'card-title' id='ptitle'><strong>" + results.recipe.label + "</strong></h4> <h6 class= text-danger text-muted><u>Ingredient List</u></h6> <p class='card-text text-primary text-center' id = 'ingredients'> " + ing + " </p> <p><small class='text-muted' id='source'> Courtesy of: " + results.recipe.source + "</p></small> <a class='btn btn-primary' id='url' href=" +  results.recipe.url + " target='_blank'>Recipe!</a><a class='btn btn-success' href=" +  results.recipe.shareAs + " target='_blank'>Nutrients!</a><br><br><a href='/fav' id='save-btn' class='btn btn-info'>Save Recipe!</a></div> </div></div>");
 
 
 			$(".results").append(newCard)
@@ -44,16 +44,14 @@ $("#search-btn").on("click", function(){
 	})
 });
 
-  $(document).on("click", "#save-btn", insertRecipe);
+  $(document).on("click", "#save-btn", function(event) {
 	event.preventDefault();
     // This function inserts a new todo into our database and then updates the view
-  function insertRecipe(newRecipe) {
-
-  	var newRecipe = {
-  	  title: $("#title").text(),
-      image: $("#image").text(),
+   	var newRecipe = {
+  	  title: $("#ptitle").text(),
+      image: $("#image").attr('src'),
       source: $("#source").text(),
-      url: $("#url").text(),
+      url: $("#url").attr('src'),
       ingredients: $("#ingredients").text()
     }
 
@@ -63,5 +61,5 @@ $("#search-btn").on("click", function(){
       // Log the data we found
       console.log(data);
     });
-
+});
 
