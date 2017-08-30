@@ -8,12 +8,12 @@ module.exports = function(app) {
 // app.get("/search", function(req, res) {
 
 //     var searchResults = req.body;
-   
+
 //     return res.render('results', {searchResults})
 // });
 
 app.get('/', function (req, res) {
-    res.render('index');
+  res.render('index');
 });
 
 app.get("/favs", function(req, res) {

@@ -26,12 +26,18 @@ p {
     Page Layout
 ***********************/
 .jumbotron {
-  height: 89%;
-  background: url('../images/Recipes-Banner.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-bottom: 0;
+    /* The image used */
+    background-image: url("../images/Recipes-Banner.jpg");
+
+    /* Full height */
+    height: 89%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0px;
 }
 
 #title {
