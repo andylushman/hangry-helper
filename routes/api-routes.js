@@ -56,7 +56,7 @@ app.post("/favs/new", function(req, res) {
 
     db.FavRecipe.create({
       title: req.body.title,
-      image: req.body.images,
+      image: req.body.image,
       source: req.body.source,
       url: req.body.url,
       yield: req.body.yield,
@@ -64,8 +64,8 @@ app.post("/favs/new", function(req, res) {
       dietLabels: req.body.dietLabels
     })
     .then(function(dbFavs) {
-      // res.json(dbFavs);
-      res.redirect('/favs');
+      res.json(dbFavs);
+      
     });
   });
 
