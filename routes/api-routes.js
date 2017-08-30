@@ -30,7 +30,43 @@ app.get("/", function(req, res) {
 });
 
     //Passport routes for registration
+ app.post("/favorites", authenticationMiddleware(), function(req, res) {
 
+    db.FavRecipe.create({
+      title: req.body.title,
+      ingredients: req.body.ingredients,
+      directions: req.body.directions
+    }).then(function(dbFavRecipe) {
+      // We have access to the new favrecipe as an argument inside of the callback function
+      res.json(dbFavRecipe);
+    })
+    .catch(function(err) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+      res.json(err);
+    });
+
+        res.render("profile", { user: req.session.passport.user })
+  });
+
+ app.get("/favorites", authenticationMiddleware(), function(req, res) {
+
+    db.FavRecipe.create({
+      title: req.body.title,
+      ingredients: req.body.ingredients,
+      directions: req.body.directions
+    }).then(function(dbFavRecipe) {
+      // We have access to the new favrecipe as an argument inside of the callback function
+      res.json(dbFavRecipe);
+    })
+    .catch(function(err) {
+      // Whenever a validation or flag fails, an error is thrown
+      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+      res.json(err);
+    });
+
+        res.render("/favorites", { user: req.session.passport.user })
+  });
     app.get("/home", function(req, res) {
 
         console.log(req.isAuthenticated())
@@ -118,6 +154,8 @@ app.get("/", function(req, res) {
     app.get("/register", function(req, res) {
         res.render("register", { title: 'Registration' })
     })
+
+
 
     app.post("/register", function(req, res) {
 
