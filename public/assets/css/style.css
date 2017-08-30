@@ -102,6 +102,10 @@ p {
   margin-top: 5px;
 }
 
+#save-btn {
+  margin-bottom: 10px;
+}
+
 .container-fluid {
   background: url('../images/vintage-concrete.png');
   background-position: center;
