@@ -11,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     image:  DataTypes.STRING,
+    UserId: DataTypes.STRING,
     source:  DataTypes.STRING,
     url:  DataTypes.STRING,
     yield: DataTypes.INTEGER,

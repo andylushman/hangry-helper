@@ -1,0 +1,18 @@
+<div class="container">
+<h1>{{username}}'s saved recipes</h1>
+
+{{#each dbFavRecipe}}
+<h3>{{{this.title}}}</h3>
+{{#if this.url}}
+<div id="recipePic">
+    <img class="favPics" style="height: 200px; width: 200px;" src="{{{this.url}}}">
+</div>
+{{/if}}
+<p class="favP">Ingredients:<br> {{{this.ingredients}}}</p>
+<p class="favP">Diet Labels:<br>  {{{this.dietLabels}}}</p>
+<p class="favP">Directions: <br> {{{this.directions}}}</p>
+
+{{/each}}
+</div>
+
+
