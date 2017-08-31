@@ -66,31 +66,31 @@
           		<button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
           	</div>
           	{{#if isAuthenticated}}
-          <div class="row">
-          	 <div class="col-sm-2">
+          
+          	 <div class="col-sm-2 hbutton">
           		<a href="/logout" class="btn btn-danger">Logout</a>
           </div>
           
-           <div class="col-sm-2">
+           <div class="col-sm-2 hbutton">
           		<a href="/myfavorites" class="btn btn-danger">My Recipes</a>
           </div>
-          	<div class="col-sm-2">
+          	<div class="col-sm-2 hbutton">
           		<a href="/favs" class="btn btn-danger">My Favorite Recipes</a>
           </div>
-          <div class="col-sm-2">
+          <div class="col-sm-2 hbutton">
           		<a href="/createRecipe" class="btn btn-danger">Create Recipe</a>
           </div>
           {{else}}
          
-          <div class="col-sm-2">
+          <div class="col-sm-2 hbutton">
           		<a href="/login" class="btn btn-danger">Login</a>
           </div>
          
-          <div class="col-sm-2">
+          <div class="col-sm-2 hbutton">
           		<a href="/register" class="btn btn-danger">Register</a>
           </div>
 		{{/if}}
-		</div>
+		
          <!-- </div> -->
 		
         </form>

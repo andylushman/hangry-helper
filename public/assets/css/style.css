@@ -83,6 +83,11 @@ p {
   margin: 0 10px;
 }
 
+.hbutton {
+  margin-right: 1px;
+
+}
+
 #search-bar {
   width: 400px;
   background-color: #cf9c64;
