@@ -21,8 +21,11 @@ var PORT = process.env.PORT || process.env.JAWSDB_URL || 8080;
     "recipes_db",
     "root",
     "", {
-
-        "dialect": "mysql",
+"username": "root",
+    "password": "rootroot",
+    "database": "hangryhackers",
+    "host": "ducodingbootcamp1project2.c8q4eqibbjyw.us-west-2.rds.amazonaws.com",
+    "dialect": "mysql"
     });
 // }
 // Requiring our models for syncing
