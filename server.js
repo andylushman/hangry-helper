@@ -15,7 +15,7 @@ var flash = require('connect-flash');
 var app = express();
 var PORT = process.env.PORT || process.env.JAWSDB_URL || 8080;
  if(process.env.JAWSDB_URL) {
-  var sequelize = new Sequelize(process.env.JAWSDB_URL);
+  var sequelize = new Sequelize(process.env.JAWSDB_URL, {"dialect": "mysql"});
 } else {
   var sequelize = new Sequelize(
     "recipes_db",
