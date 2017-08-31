@@ -41,6 +41,22 @@ $("#search-btn").on("click", function(){
         };
     })
 });
+
+$(document).on("click", "#sendEmail", function(){
+	var params = {};
+	console.log("sending");
+	$.ajax({
+		url: "/send",
+		method: "POST"
+		data: params;
+	}).done(function(response){
+		console.log(response);
+		
+
+        
+    })
+});
+
   $(document).on("click", "#save-btn", function(event) {
     event.preventDefault();
     var parent = $(this).parent().parent();

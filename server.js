@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
+const sendmail = require('sendmail')();
           // var expressValidator = require("express-validator");
           // //Authentication packages
           // var session = require("express-session");

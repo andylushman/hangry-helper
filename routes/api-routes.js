@@ -1,4 +1,5 @@
 var db = require("../models");
+const sendmail = require('sendmail')();
 
 
 // Routes
@@ -67,6 +68,21 @@ app.post("/favs/new", function(req, res) {
       res.json(dbFavs);
       
     });
+  });
+
+  app.post("/send", function(req, res) {
+    console.log("sending email", req.body);
+
+    sendmail({
+      from: 'hangry-hackers@gmail.com',
+      to: 'mpiatnichko@gmail.com',
+      subject: 'test sendmail',
+      html: "test email",
+    }, function(err, reply) {
+      console.log(err && err.stack);
+      console.dir(reply);
+  })
+
   });
 
 
