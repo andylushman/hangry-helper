@@ -7,10 +7,10 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+  "username": "root",
+    "password": "rootroot",
+    "database": "hangryhackers",
+    "host": "ducodingbootcamp1project2.c8q4eqibbjyw.us-west-2.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
