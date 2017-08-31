@@ -14,19 +14,28 @@ var flash = require('connect-flash');
 // =============================================================
 var app = express();
 var PORT = process.env.PORT  || 8080;
+
+
+
+var sequelize = new Sequelize('hangryhackers', 'root', 'rootroot', {
+  host: process.env.ADDRESS,
+  port: process.env.PORT,
+  dialect: 'mysql'
+});
+
 //  if(process.env.JAWSDB_URL) {
 //   var sequelize = new Sequelize(process.env.JAWSDB_URL, {"dialect": "mysql"});
-// } else {
-  var sequelize = new Sequelize(
-//     "recipes_db",
-//     "root",
-//     "", {
-// "username": "root",
-//     "password": "rootroot",
-//     "database": "hangryhackers",
-//     "host": "ducodingbootcamp1project2.c8q4eqibbjyw.us-west-2.rds.amazonaws.com",
-//     "dialect": "mysql"
-    });
+// // } else {
+//   var sequelize = new Sequelize(
+// //     "recipes_db",
+// //     "root",
+// //     "", {
+// // "username": "root",
+// //     "password": "rootroot",
+// //     "database": "hangryhackers",
+// //     "host": "ducodingbootcamp1project2.c8q4eqibbjyw.us-west-2.rds.amazonaws.com",
+// //     "dialect": "mysql"
+//     });
 // }
 // Requiring our models for syncing
 var db = require("./models");
