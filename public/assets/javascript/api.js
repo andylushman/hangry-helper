@@ -56,6 +56,6 @@ $("#search-btn").on("click", function(){
     // On success, run the following code
     .done(function(data) {
       // Log the data we found
-      res.redirect('/favs');
+      // console.log(data);
     });
 });
