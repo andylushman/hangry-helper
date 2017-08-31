@@ -15,13 +15,24 @@ var flash = require('connect-flash');
 var app = express();
 var PORT = process.env.PORT  || 8080;
 
-
+if(process.env.PORT){
 
 var sequelize = new Sequelize('hangryhackers', 'root', 'rootroot', {
   host: process.env.ADDRESS,
   port: process.env.PORT,
   dialect: 'mysql'
 });
+} 
+
+else{
+  var sequelize = new Sequelize(
+    "recipes_db",
+    "root",
+    "", {
+    "dialect": "mysql"
+    });
+
+}
 
 //  if(process.env.JAWSDB_URL) {
 //   var sequelize = new Sequelize(process.env.JAWSDB_URL, {"dialect": "mysql"});
