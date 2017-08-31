@@ -8,19 +8,23 @@ var cookieParser = require('cookie-parser');
 var passport = require("passport")
 var Sequelize = require('sequelize')
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
-var sequelize = new Sequelize(
+
+var flash = require('connect-flash');
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = process.env.PORT || process.env.JAWSDB_URL || 8080;
+ if(process.env.JAWSDB_URL) {
+  var sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  var sequelize = new Sequelize(
     "recipes_db",
     "root",
     "", {
 
         "dialect": "mysql",
     });
-var flash = require('connect-flash');
-// Sets up the Express App
-// =============================================================
-var app = express();
-var PORT = process.env.PORT || process.env.JAWSDB_URL || 8080;
- 
+}
 // Requiring our models for syncing
 var db = require("./models");
 
