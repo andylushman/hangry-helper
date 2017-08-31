@@ -13,7 +13,7 @@ var flash = require('connect-flash');
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.JAWSDB_URL || 8080;
+var PORT = process.env.PORT || process.env.JAWSDB_URL || 8080;
  if(process.env.JAWSDB_URL) {
   var sequelize = new Sequelize(process.env.JAWSDB_URL, {"dialect": "mysql"});
 } else {
