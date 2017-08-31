@@ -17,13 +17,13 @@ var PORT = process.env.PORT || process.env.JAWSDB_URL || 8080;
 //  if(process.env.JAWSDB_URL) {
 //   var sequelize = new Sequelize(process.env.JAWSDB_URL, {"dialect": "mysql"});
 // } else {
-//   var sequelize = new Sequelize(
-//     "recipes_db",
-//     "root",
-//     "", {
+  var sequelize = new Sequelize(
+    "recipes_db",
+    "root",
+    "", {
 
-//         "dialect": "mysql",
-//     });
+        "dialect": "mysql",
+    });
 // }
 // Requiring our models for syncing
 var db = require("./models");
