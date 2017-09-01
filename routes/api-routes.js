@@ -20,7 +20,7 @@ app.get("/login", function(req, res) {
     })
 
     app.post("/login", passport.authenticate("local", {
-        successRedirect: "/profile", 
+        successRedirect: "/profile",
         failureRedirect: "/login",
         failureFlash: true
     }));
@@ -40,7 +40,7 @@ app.get("/login", function(req, res) {
 
 
 app.get("/myfavorites", authenticationMiddleware(), function(req, res){
-  
+
   db.FavRecipe.findAll({
     where: {
       userId: req.session.passport.user
@@ -52,7 +52,7 @@ app.get("/myfavorites", authenticationMiddleware(), function(req, res){
       //   }
         console.log(dbFavRecipe[0].title)
         res.render("myfavorites", {dbFavRecipe: dbFavRecipe, username: dbFavRecipe[0].UserId})
-      
+
       //res.render("myfavorites", { user: req.session.passport.user })
       // We have access to the new favrecipe as an argument inside of the callback function
       //res.json(dbFavRecipe);
@@ -135,7 +135,7 @@ app.post("/favs/new", function(req, res) {
 
     db.FavRecipe.create({
       title: req.body.title,
-      image: req.body.images,
+      image: req.body.image,
       source: req.body.source,
       url: req.body.url,
       yield: req.body.yield,
@@ -182,7 +182,7 @@ app.post("/register", function(req, res) {
                     req.login(loggedUser, function(err) {
                       res.redirect("/login")
                         req.flash("successMsg", "You are registered and can now login")
-                        
+
 
                     })
 
@@ -210,17 +210,17 @@ app.post("/register", function(req, res) {
     //authenticates information from user using local DB
     passport.use(new LocalStrategy(
         function(username, password, done) {
-          
+
             db.User.findOne({
                 where: {
                     username: username
                 }
 
             }).then(function(user, error) {
-             
+
                 if (error) { done(error) } else if (user == null) {
-                    
-                    
+
+
                     done(null, false, {message: "Username does not exsist"})
 
                 } else {
