@@ -1,8 +1,10 @@
 // $("#results").hide();
 console.log("test");
 
-$("#search-btn").on("click", function(){
+$("#search-btn").on("click", function(event){
+	event.preventDefault();
 	$(".results").empty();
+
 	var search = $(".search").val().trim()
 
 	var diet = "diet="+ $("#dietLabel").val().trim() + "&";
@@ -20,7 +22,8 @@ $("#search-btn").on("click", function(){
 	console.log(queryURL)
 	$.ajax({
 		url: queryURL,
-		method: "GET"
+		method: "GET",
+
 	}).done(function(response){
 		console.log(response);
 		for (var i = 0; i < 8; i++){
@@ -51,8 +54,9 @@ $("#search-btn").on("click", function(){
     }
    $.post("/favs/new", newRecipe)
     // On success, run the following code
-    .done(function(data) {
+    .done(function(res) {
       // Log the data we found
-      res.redirect('/favs');
+      alert("Recipe saved!");
+      // res.redirect('/favs');
     });
 });

@@ -123,7 +123,7 @@ app.put("/:id", function(req, res) {
       where: {
         id: req.params.id
       }
-    }).then(function(dbTodo) {
+    }).then(function(dbFavs) {
       res.redirect('/favs');
     });
   });
@@ -143,8 +143,8 @@ app.post("/favs/new", function(req, res) {
       dietLabels: req.body.dietLabels
     })
     .then(function(dbFavs) {
-      // res.json(dbFavs);
-      res.redirect('/favs');
+      res.json(dbFavs);
+      // res.render('/favs');
     });
   });
 
