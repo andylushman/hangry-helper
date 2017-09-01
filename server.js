@@ -2,52 +2,47 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var expressValidator = require("express-validator");
-// //Authentication packages
+//Authentication packages
 var session = require("express-session");
 var cookieParser = require('cookie-parser');
 var passport = require("passport")
 var Sequelize = require('sequelize')
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 var flash = require('connect-flash');
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT  || 8080;
+var PORT = process.env.PORT || process.env.JAWSDB_URL  || 8080;
 
-if(process.env.PORT){
+// if(process.env.PORT){
 
-var sequelize = new Sequelize('hangryhackers', 'root', 'rootroot', {
-  host: process.env.ADDRESS,
-  port: process.env.PORT,
-  dialect: 'mysql'
-});
-} 
+// var sequelize = new Sequelize('hangryhackers', 'root', 'rootroot', {
+//   host: process.env.ADDRESS,
+//   port: process.env.PORT,
+//   dialect: 'mysql'
+// });
+// } 
 
-else{
+// else {
+//   var sequelize = new Sequelize(
+//     "recipes_db",
+//     "root",
+//     "", {
+//     "dialect": "mysql"
+//     });
+// }
+
+ if(process.env.JAWSDB_URL) {
+  var sequelize = new Sequelize(process.env.JAWSDB_URL, {"dialect": "mysql"});
+} else {
   var sequelize = new Sequelize(
     "recipes_db",
     "root",
     "", {
+
     "dialect": "mysql"
     });
-
 }
-
-//  if(process.env.JAWSDB_URL) {
-//   var sequelize = new Sequelize(process.env.JAWSDB_URL, {"dialect": "mysql"});
-// // } else {
-//   var sequelize = new Sequelize(
-// //     "recipes_db",
-// //     "root",
-// //     "", {
-// // "username": "root",
-// //     "password": "rootroot",
-// //     "database": "hangryhackers",
-// //     "host": "ducodingbootcamp1project2.c8q4eqibbjyw.us-west-2.rds.amazonaws.com",
-// //     "dialect": "mysql"
-//     });
-// }
 // Requiring our models for syncing
 var db = require("./models");
 

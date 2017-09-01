@@ -6,18 +6,18 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
+
   "test": {
-  "username": "root",
-    "password": "rootroot",
-    "database": "hangryhackers",
-    "host": "ducodingbootcamp1project2.c8q4eqibbjyw.us-west-2.rds.amazonaws.com",
-    "dialect": "mysql"
-  },
-  "production": {
    "username": "root",
-    "password": "rootroot",
-    "database": "hangryhackers",
-    "host": "ducodingbootcamp1project2.c8q4eqibbjyw.us-west-2.rds.amazonaws.com",
+    "password": "",
+    "database": "recipes_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+
+  },
+  
+  "production": {
+   "use_env_variable":"JawsDB_URL",
     "dialect": "mysql"
 }
 }
