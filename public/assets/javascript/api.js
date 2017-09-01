@@ -1,8 +1,10 @@
 // $("#results").hide();
 console.log("test");
 
-$("#search-btn").on("click", function(){
+$("#search-btn").on("click", function(event){
+	event.preventDefault();
 	$(".results").empty();
+
 	var search = $(".search").val().trim()
 
 	var diet = "diet="+ $("#dietLabel").val().trim() + "&";
@@ -20,7 +22,8 @@ $("#search-btn").on("click", function(){
 	console.log(queryURL)
 	$.ajax({
 		url: queryURL,
-		method: "GET"
+		method: "GET",
+
 	}).done(function(response){
 		console.log(response);
 		for (var i = 0; i < 8; i++){
@@ -30,7 +33,8 @@ $("#search-btn").on("click", function(){
 
 
 			// console.log(ing)
-
+			var newCard = $( "<div class='col-sm-3'>" );
+			
 			newCard.html("<div class='card text-center'> <img class= 'img-fluid' id='image' src='" + results.recipe.image + "' alt = 'card image cap'> <div class='card-body text-center'>" + "<h4 class = 'card-title' id='rtitle'><strong>" + results.recipe.label + "</strong></h4> <h6 class= 'text-danger text-muted'><u>Ingredient List</u></h6> <p class='card-text text-primary text-center' id = 'ingredients'> " + ing + " </p> <p><small class='text-muted' id='source'> Courtesy of: " + results.recipe.source + "</p></small> <a class='btn btn-primary' id='url' href='" +  results.recipe.url + " target='_blank'>Recipe!</a><a class='btn btn-success' href=" +  results.recipe.shareAs + "' target='_blank'>Nutrients!</a><br><br><a href='/favs' id='save-btn' class='btn btn-info'>Save Recipe!</a></div> </div></div>");
             $(".results").append(newCard);
             console.log(response.hits[i]);
@@ -50,8 +54,9 @@ $("#search-btn").on("click", function(){
     }
    $.post("/favs/new", newRecipe)
     // On success, run the following code
-    .done(function(data) {
+    .done(function(res) {
       // Log the data we found
-      res.redirect('/favs');
+      alert("Recipe saved!");
+      // res.redirect('/favs');
     });
 });
