@@ -24,14 +24,13 @@ var sequelize = new Sequelize('hangryhackers', 'root', 'rootroot', {
 });
 } 
 
-else{
+else {
   var sequelize = new Sequelize(
     "recipes_db",
     "root",
     "", {
     "dialect": "mysql"
     });
-
 }
 
 //  if(process.env.JAWSDB_URL) {
