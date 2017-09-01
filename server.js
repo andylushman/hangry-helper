@@ -2,13 +2,12 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var expressValidator = require("express-validator");
-// //Authentication packages
+//Authentication packages
 var session = require("express-session");
 var cookieParser = require('cookie-parser');
 var passport = require("passport")
 var Sequelize = require('sequelize')
 var SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 var flash = require('connect-flash');
 // Sets up the Express App
 // =============================================================
