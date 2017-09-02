@@ -17,7 +17,10 @@
   },
   
   "production": {
-   "use_env_variable":"JawsDB_URL",
+  "host": "codeflink.net",
+  "username": "heathersosa",
+  "password": "98IToGY4TAEu",
+  "database": "heathersosa",
     "dialect": "mysql"
 }
 }
