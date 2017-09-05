@@ -9,7 +9,7 @@ This application demonstrates a full stack application with a front end implemen
 The user may search any recipe through the use of the navbar and filter the searches with the help of the dropdowns. The user may then add any specific recipe to the database by clicking on it.
 
 **Demo**  
-A demo of the hangry helper application can be found **[here](https://github.com/andylushman/hangry-helper)**.
+A demo of the hangry helper application can be found **[here](https://guarded-hamlet-82268.herokuapp.com/)**.
 
 **MySQL Database Setup**     
 In order to run this application, you should have the MySQL database already set up on your machine. If you don't, visit the MySQL installation page to install the version you need for your operating system. Once you have MySQL installed, you will be able to create the Hangry Helper database and the products table with the SQL code found in schema.sql and seeds.sql files. Run this code inside your MySQL client like MySQL Workbench to populate the database, then you will be ready to proceed with running the Hangry Helper installation.
