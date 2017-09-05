@@ -1,7 +1,7 @@
 **Hangry Helper**
 =========
 
-A recipe finding application with Node.js/Express/MySQL/Handlebars/Mocha/Chai/Nightmare.js
+A recipe finding application with Node.js/Express/MySQL/Handlebars/Mocha/Chai/Nightmare.js/Passport.js
 
 **Description**  
 This application demonstrates a full stack application with a front end implemented with HTML/CSS and a backend implemented with Node.js and Express. HTML templating is done with the help of Handlebars.
