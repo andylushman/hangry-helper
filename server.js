@@ -38,7 +38,7 @@ var PORT = process.env.PORT || process.env.JAWSDB_URL  || 8080;
   var sequelize = new Sequelize(
     "recipes_db",
     "root",
-    "", {
+    "DUb00tc4mp", {
 
     "dialect": "mysql"
     });
@@ -119,9 +119,9 @@ require("./routes/api-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 // IF YOU HAVE AN EXISTING DB USE THIS LINE INSTEAD...
-db.sequelize.sync().then(function() {
+// db.sequelize.sync({force: true}).then(function() {
 
-    // db.sequelize.sync().then(function() {
+    db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
     });
